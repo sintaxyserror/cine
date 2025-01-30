@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db:
     image: rsanzfloridauni/mi_cine:v1
-    container_name: contenedorMiCine
+    container_name: contenedorMiCinev2
     environment:
       MYSQL_ROOT_PASSWORD: contrasenyaRoot
       MYSQL_DATABASE: cine
