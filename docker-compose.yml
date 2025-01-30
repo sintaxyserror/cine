@@ -1,6 +1,8 @@
+version: "3.8"
+
 services:
   db:
-    image: sintaxyserror/mi_cine:v1
+    image: rsanzfloridauni/mi_cine:v1
     container_name: contenedorMiCine
     environment:
       MYSQL_ROOT_PASSWORD: contrasenyaRoot
@@ -9,14 +11,16 @@ services:
       MYSQL_PASSWORD: contrasenyaUsuario1
     ports:
       - "3306:3306"
+    restart: always
 
   php:
-    image: sintaxyserror/mi_app_cine:v1
+    image: rsanzfloridauni/mi_app_cine:v1
     container_name: contenedorMiApp
     ports:
       - "8080:80"
     depends_on:
       - db
+    restart: always
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -28,3 +32,4 @@ services:
       - "8081:80"
     depends_on:
       - db
+    restart: always
