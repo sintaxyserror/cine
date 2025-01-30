@@ -4,6 +4,7 @@ services:
   db:
     image: rsanzfloridauni/mi_cine:v1
     container_name: contenedorMiCine
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: contrasenyaRoot
       MYSQL_DATABASE: cine
